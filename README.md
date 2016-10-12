@@ -2,7 +2,7 @@ Get CPV codes into Prestashop Categories
 
 Works like this atm:
  
-1. The cpv code list in csv must be in the following format:
+1.The cpv code list in csv must be in the following format:
  
 03000000;Сельскохозяйственные, рыбные продукты, продукция ферм, лесного хозяйства и сопутствующая продукция
 
@@ -55,16 +55,16 @@ Works like this atm:
 03115130;Лен
 ...
 
-2. divide it with awk.
+2.divide it with awk.
 codes:
 $ awk -F ";" '{print $1"}' file
 desc:
 $ awk -F ";" '{print $2"}' file
 in to two separate files
 
-3. Substitute the file name in this code
+3.Substitute the file name in this code
 
-4. Compile:
+4.Compile:
 g++ --std=c++0x cpp_cpv_to_presta.cpp -o cpp_cpv_to_presta
 
 
@@ -90,11 +90,11 @@ output will be:
 9415?1?"98341100"?"98341000"?Услуги по управлению жилыми площадями
 ...
 
-6. In presta:
+6.In presta:
 
 Use ? as delimiter (cpv names use ; in desc text)
 
-7. Columns are
+7.Columns are
 ID, Active, Name, Parent Category, Description
 
-8. Don't forget to check 'Lines to skip'
+8.Don't forget to check 'Lines to skip'
