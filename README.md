@@ -1,3 +1,5 @@
+!!WARN: names get a bit mixed up when dealing with xxxxxxx0 and xxxxxxxx codes
+
 Get CPV codes into Prestashop Categories
 
 Works like this atm:
