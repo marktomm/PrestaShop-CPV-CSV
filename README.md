@@ -92,11 +92,36 @@ output will be:
 9415?1?"98341100"?"98341000"?Услуги по управлению жилыми площадями
 ...
 
-6.In presta:
+In presta:
+
+6.In AdminImportController:
+
+make small change in categoryImport method after
+
+AdminImportController::arrayWalk($info, array('AdminImportController', 'fillInfo'), $category);
+
+```
+            // if (isset($category->parent) && is_numeric($category->parent)) {
+            //     if (isset($cat_moved[$category->parent])) {
+            //         $category->parent = $cat_moved[$category->parent];
+            //     }
+            //     $category->id_parent = $category->parent;
+            // } else
+            
+            // if (isset($category->parent) && is_string($category->parent)) {
+                if (isset($category->parent)) {
+
+```
+
+or override the function
+
+(and probably get_best_path method too, bc its private)
+
+7.In import
 
 Use ? as delimiter (cpv names use ; in desc text)
 
-7.Columns are
+Columns are
 ID, Active, Name, Parent Category, Description
 
-8.Don't forget to check 'Lines to skip'
+Don't forget to check 'Lines to skip'
